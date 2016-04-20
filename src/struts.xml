@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+
+<constant name="struts.multipart.maxSize" value="10000000" />
 	<package name="mypackage" extends="struts-default" namespace="/">
 
 		<interceptors>
@@ -94,8 +96,14 @@
 
 		
 		<action name="uploadAction" class="com.great.action.UpLoadAction">
-			<result name="input">/WEB-INF/upload.jsp</result>
-			<result name="success">/WEB-INF/upload.jsp</result>
+			<result name="input" type="chain">
+				<param name="namespace">/</param>
+				<param name="actionName">SelectAction</param>
+			</result>
+			<result name="success" type="chain">
+				<param name="namespace">/</param>
+				<param name="actionName">SelectAction</param>
+			</result>
 		</action>
 
 

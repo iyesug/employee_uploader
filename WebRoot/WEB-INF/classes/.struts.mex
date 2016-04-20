@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
-  <package name="mypackage" location="229,10" size="313,634">
-    <action name="SelectAction" location="146,71" size="150,83">
+  <package name="mypackage" location="229,10" size="327,743">
+    <action name="CheckCodeAction" location="28,378" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="Index" location="28,478" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="LoginAction" location="27,577" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="ShowAction" namespace="/" />
+      </result>
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="SelectAction" location="2,22" size="150,83">
       <result name="sucess">
         <resourceEdge source="sucess" routing="0" target="insert.jsp" />
       </result>
@@ -12,7 +28,7 @@
         <resourceEdge source="del" routing="0" target="ShowAction" namespace="/" />
       </result>
     </action>
-    <action name="InsertAction" location="151,159" size="150,62">
+    <action name="InsertAction" location="85,138" size="150,62">
       <result name="sucess">
         <resourceEdge source="sucess" routing="0" target="ShowAction" namespace="/" />
       </result>
@@ -20,38 +36,36 @@
         <resourceEdge source="input" routing="0" target="InsertAction" namespace="/" />
       </result>
     </action>
-    <action name="ShowAction" location="155,241" size="150,41">
+    <action name="ShowAction" location="93,247" size="150,41">
       <result name="sucess">
         <resourceEdge source="sucess" routing="0" target="show.jsp" />
       </result>
     </action>
-    <action name="ChangeAction" location="85,302" size="150,41">
+    <action name="ChangeAction" location="98,315" size="150,41">
       <result name="sucess">
         <resourceEdge source="sucess" routing="0" target="ShowAction" namespace="/" />
       </result>
     </action>
-    <action name="CheckCodeAction" location="15,365" size="150,41">
-      <result name="success" />
-    </action>
-    <action name="Index" location="15,465" size="150,41">
-      <result name="success">
-        <resourceEdge source="success" routing="0" target="login.jsp" />
-      </result>
-    </action>
-    <action name="LoginAction" location="14,564" size="150,62">
-      <result name="success">
-        <resourceEdge source="success" routing="0" target="ShowAction" namespace="/" />
-      </result>
+    <action name="uploadAction" location="89,671" size="150,62">
       <result name="input">
-        <resourceEdge source="input" routing="0" target="index.jsp" />
+        <resourceEdge source="input" routing="0" target="insert.jsp" />
       </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="insert.jsp" />
+      </result>
+    </action>
+  </package>
+  <package name="jsonPackage" location="50,950" size="181,80">
+    <action name="StaffAjax" location="23,31" size="150,41">
+      <result name="exist" />
     </action>
   </package>
   <webResource name="insert.jsp" path="/WEB-INF/insert.jsp" location="50,500" size="150,55" />
   <webResource name="update.jsp" path="/WEB-INF/update.jsp" location="50,650" size="150,55" />
-  <webResource name="success.jsp" path="/WEB-INF/success.jsp" location="350,650" size="150,55" />
+  <webResource name="success.jsp" path="/WEB-INF/success.jsp" location="632,677" size="150,55" />
   <webResource name="show.jsp" path="/WEB-INF/show.jsp" location="50,800" size="150,55" />
   <webResource name="login.jsp" path="/WEB-INF/login.jsp" location="50,350" size="150,55" />
   <webResource name="index.jsp" path="/index.jsp" location="350,800" size="150,55" />
+  <webResource name="upload.jsp" path="/WEB-INF/upload.jsp" location="350,950" size="150,55" />
 </Struts2Diagram>
 

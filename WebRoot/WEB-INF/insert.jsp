@@ -50,24 +50,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </form>
     <form action="InsertAction.action" method="post" >
  
-    <img alt="" src="${imgfile}"   ><br />
-    地址：<input type="text" name="emp.img" value="${imgfile}"  id="img" disabled="disabled"><br />
-    	姓名<input type="text" name="emp.name" value="" id="name"> <span></span><br />
+  
+    地址：<input type="text" name="emp.img" value="${imgfile}"   id="img" readonly="readonly"><br />
+    	姓名：<input type="text" name="emp.name" value="" id="name"> <span></span><br />
 
-    	  部门
+    	  部门：
     	  		<s:select name="emp.department" list="listDep" value="emp.department" 
     	  		listKey="name" listValue="name"></s:select>
-
+<br />
     
-      职务		<s:select name="emp.job" list="listjob" value="emp.job" 
+      职务：	<s:select name="emp.job" list="listjob" value="emp.job" 
       listKey="name" listValue="name"></s:select>
- 
+ <br />
 <input type="submit" value="确定"  id="sub" disabled="disabled">
 
     </form>
     
     
-
+  <img alt="" src="${imgfile}"   ><br />
          
 <s:debug/>
   </body>

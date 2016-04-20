@@ -35,7 +35,7 @@
 
 
 			<tr>
-
+				<td width="150" align="center">头像</td>
 				<td width="150" align="center">名字</td>
 				<td width="150" align="center">部门</td>
 				<td width="150" align="center">职务</td>
@@ -44,7 +44,8 @@
 			</tr>
 			<s:iterator value="#request.listemp" id="emp">
 				<tr>
-
+	
+					<td  width="100"  height="100" align="center"><img src="<s:property value="img" />" width="100%" height="100%" /></td>
 					<td width="150" align="center"><s:property value="name" />
 					</td>
 					

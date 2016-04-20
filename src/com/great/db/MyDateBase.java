@@ -178,10 +178,12 @@ public class MyDateBase {
 					String name=rs.getString("NAME");
 					String department=rs.getString("DEPARTMENT");
 					String job=rs.getString("JOB_TITLE");
+					String img=rs.getString("IMG");
 					emp=new Employee();
 					emp.setName(name);
 					emp.setDepartment(department);
 					emp.setJob(job);
+					emp.setImg(img);
 					list.add(emp);
 				}
 				rs.close();
@@ -270,13 +272,15 @@ public class MyDateBase {
 	public void newEmp(Employee emp){
 		
 		try {
-		String sql="INSERT INTO EMPLOYEE (DEPARTMENT,JOB_TITLE,NAME) VALUES(?,?,?)";
+		String sql="INSERT INTO EMPLOYEE (DEPARTMENT,JOB_TITLE,NAME,IMG) VALUES(?,?,?,?)";
 			ps=conn.prepareStatement(sql);
 		
 			ps.setString(1, emp.getDepartment());
 			ps.setString(2, emp.getJob());
 			ps.setString(3, emp.getName());
+			ps.setString(4, emp.getImg());
 			ps.execute();
+			System.out.println(emp.getImg());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
